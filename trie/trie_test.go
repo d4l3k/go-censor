@@ -1,12 +1,12 @@
-package censor
+package trie
 
 import (
 	"reflect"
 	"testing"
 )
 
-func TestTrieMatches(t *testing.T) {
-	tr := NewTrie()
+func TestMatches(t *testing.T) {
+	tr := New()
 	tr.AddString("test")
 	tr.AddString("testfoo")
 	tr.AddString("bar")

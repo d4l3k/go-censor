@@ -1,7 +1,7 @@
-package censor
+package trie
 
-// NewTrie returns a new Trie.
-func NewTrie() *Trie {
+// New returns a new Trie.
+func New() *Trie {
 	return &Trie{
 		children: map[byte]*Trie{},
 		end:      false,
@@ -28,7 +28,7 @@ func (t *Trie) Add(word []byte) {
 
 	subTrie, ok := t.children[word[0]]
 	if !ok {
-		subTrie = NewTrie()
+		subTrie = New()
 		t.children[word[0]] = subTrie
 	}
 	subTrie.Add(word[1:])
